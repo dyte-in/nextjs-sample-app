@@ -9,9 +9,14 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@dytesdk/react-ui-kit": "^1.8.2",
+    "@dytesdk/react-web-core": "^1.1.1",
+    "@dytesdk/ui-kit": "^1.8.2",
+    "axios": "^0.27.2",
     "next": "12.1.6",
     "react": "18.1.0",
-    "react-dom": "18.1.0"
+    "react-dom": "18.1.0",
+    "react-router-dom": "^6.3.0"
   },
   "devDependencies": {
     "@types/node": "17.0.40",

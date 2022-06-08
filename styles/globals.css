@@ -14,3 +14,52 @@ a {
 * {
   box-sizing: border-box;
 }
+
+body {
+  background-color: rgb(26, 26, 26);
+  color: #e0e0e0;
+  height: 100vh;
+  margin: auto;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+button {
+  padding: 10px 16px;
+  background: #0078e7;
+  border: none;
+  cursor: pointer;
+  color: white;
+  border-radius: 2px;
+}
+
+li {
+  font-size: 18px;
+  padding: 10px 0;
+  display: table-cell;
+  text-transform: capitalize;
+}
+
+button:hover {
+  background: #2160fd;
+}
+
+input {
+  padding: 10px;
+}
+
+#__next {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  margin: 0;
+}
