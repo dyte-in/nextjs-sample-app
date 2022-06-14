@@ -1,34 +1,131 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<!-- PROJECT LOGO -->
+<p align="center">
+  <a href="https://dyte.io">
+    <img src="https://dyte-uploads.s3.ap-south-1.amazonaws.com/dyte-logo-dark.svg" alt="Logo" height="40">
+  </a>
+
+  <h3 align="center">NextJS + React Sample App</h3>
+
+  <p align="center">
+    A basic project demonstrating how you can integrate **dyte** in your NextJS app.
+    <br />
+    <a href="https://docs.dyte.io"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <a href="https://dyte-react-sample.vercel.app">View Demo</a>
+    ·
+    <a href="https://github.com/dyte-in/nextjs-sample-app/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/dyte-in/nextjs-sample-app/issues">Request Feature</a>
+  </p>
+</p>
+
+<!-- TABLE OF CONTENTS -->
+
+## Table of Contents
+
+- [About the Project](#about-the-project)
+  - [Built With](#built-with)
+- [Structure](#structure)
+- [Application FLow](#application-flow)
+- [Getting Started](#getting-started)
+  - [Installation](#installation)
+- [Usage](#usage)
+
+- [License](#license)
+
+<!-- ABOUT THE PROJECT -->
+
+## About The Project
+
+A basic project demonstrating how you can integrate **dyte** in your React app.
+
+![very-basic](docs/site.png)
+
+Choose from a list of available meeting rooms, or create a new Dyte meeting and join as a participant or a host.
+
+### Built With
+
+- [create-next-app](https://github.com/vercel/next.js/tree/canary/packages/create-next-app)
+- [@dytesdk/react-ui-kit](https://www.npmjs.com/package/@dytesdk/react-ui-kit)
+- [@dytesdk/react-web-core](https://www.npmjs.com/package/@dytesdk/react-web-core)
+- [Axios](https://github.com/axios/axios)
+
+<!-- GETTING STARTED -->
+
+## Structure
+
+React App structure:
+
+```
+├── src
+│   ├── 📁 pages
+|   |   ├── index.tsx               // application js entry point
+|   |   ├──/meeting/[...slug].tsx   // contains main screen page component.
+│   ├── 📁 components               // sample example components
+```
 
 ## Getting Started
 
-First, run the development server:
+Please make sure you have an organization ID and API Key for your application. These can be obtained from the developer portal.
 
-```bash
-npm run dev
-# or
-yarn dev
+### Installation
+
+1. Clone the repo
+
+```sh
+git clone https://github.com/dyte-in/nextjs-sample-app.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install NPM packages
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+```sh
+npm install
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+3. Create an `.env` file with your credentials with below details
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+```sh
+NEXT_PUBLIC_REACT_APP_DYTE_BASE_URL=https://api.cluster.dyte.in
+NEXT_PUBLIC_REACT_APP_MY_BACKEND=<YOUR-BACKED-TO-CREATE-OR-FETCH-MEETINGS> 
+NEXT_PUBLIC_REACT_APP_DYTE_ORG_ID=<YOUR-ORG-ID>
+```
 
-## Learn More
+You can use https://dyte-sample.herokuapp.com as a test backend.
 
-To learn more about Next.js, take a look at the following resources:
+4. Run the application
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```sh
+npm run dev
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+## Application Flow
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+On opening `http://localhost:3000` in your browser, the client will first make an api call to check list of available meeting rooms. If not, then you can create a meeting room by entering a title and then click on create room button. The newly created room can be seen under the meeting room list section.
+
+You can select the example that you want to test from the select example section. You can also refer the example component code with the path provided.
+
+Finally, you can test the example by joining any meeting room as a host or as a participant. On clicking the button, a new user will be created by making an api call and meeting room will be launched.
+
+All mandatory credentials of a user (i.e. roomname, user authtoken etc.) that are required to launch the meetings are stored in session storage.
+
+
+<!-- USAGE EXAMPLES -->
+
+## Usage
+
+Choose from a list of examples and then join on any meeting room to test it live.
+
+You can also refer the example component code with the path provided.
+
+<!-- You can use this example as a reference on how you can integrate your webapp with dyte. -->
+
+_For documentation on APIs and client SDKs, please refer to our [official documentation](https://docs.dyte.io)._
+
+<!-- LICENSE -->
+
+## License
+
+Distributed under the MIT License. See [`LICENSE`](./LICENSE) for more information.
