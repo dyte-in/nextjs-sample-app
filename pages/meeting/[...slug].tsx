@@ -3,17 +3,8 @@ import dynamic from "next/dynamic";
 import LoaderIcon from "../../components/loader";
 import { useRouter } from "next/router";
 import Link from "next/link";
-
-// prevent ssr on refresh
-const CustomMeeting = dynamic(
-    () => { return import("../../components/customMeeting");},
-    { ssr: false }
-);
-
-const SimpleMeeting = dynamic(
-    () => { return import("../../components/simpleMeeting");},
-    { ssr: false }
-);
+import CustomMeeting from "../../components/customMeeting";
+import SimpleMeeting from "../../components/simpleMeeting";
 
 function Meeting() {
     const router = useRouter();
