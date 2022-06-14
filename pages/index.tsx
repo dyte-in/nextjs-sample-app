@@ -8,7 +8,6 @@ import LoaderIcon from '../components/loader';
 
 const Home: NextPage = () => {
   const MY_BACKEND = process.env.NEXT_PUBLIC_REACT_APP_MY_BACKEND;
-  const firstMountRef = useRef(true);
   const [loading, setLoading] = useState<boolean>(false);
   const [allMeeetings, setAllMeeting] = useState<any[]>([]);
   const [newMeetingTitle, setNewMeetingTitle] = useState<string>("");
@@ -69,11 +68,6 @@ const Home: NextPage = () => {
   };
 
   useEffect(() => {
-    if (firstMountRef.current) {
-      firstMountRef.current = false;
-      return;
-    }
-
     // api call to get list of available/existing meeting rooms
     axios({
       url: `${MY_BACKEND}/meetings`,
