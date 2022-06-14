@@ -19,17 +19,12 @@ function Meeting() {
     const router = useRouter();
     const [authToken, setAuthToken] = useState('');
     const slug = router.query.slug || [];
-    const firstMountedRef = useRef(true);
   
     useEffect(() => {
-        if (firstMountedRef.current) {
-            firstMountedRef.current = false;
-            return;
-        }
         setAuthToken(sessionStorage.getItem("auth") as string);
     }, []);
 
-    if (firstMountedRef.current || !authToken) return <LoaderIcon />;
+    if (!authToken) return <LoaderIcon />;
 
     if (slug[0] === 'simple-meeting') {
         return <SimpleMeeting roomName={slug[1]} authToken={authToken}/>

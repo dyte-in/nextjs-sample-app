@@ -5,16 +5,10 @@ import LoaderIcon from "./loader";
 import { useRouter } from "next/router";
 
 function SimpleMeeting({ roomName, authToken} : { roomName: string, authToken: string }) {
-  const firstMountedRef = useRef(true);
   const [isLoaded, setIsLoaded] = useState(false);
   const [meeting, initMeeting] = useDyteClient();
   const router = useRouter();
   useEffect(() => {
-    if (firstMountedRef.current) {
-      firstMountedRef.current = false;
-      return;
-    }
-
     if (authToken && roomName && !isLoaded) {
       initMeeting({
         authToken,
