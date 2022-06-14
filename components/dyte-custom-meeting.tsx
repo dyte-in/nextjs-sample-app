@@ -9,9 +9,6 @@ import {
   DyteMicToggle,
   DyteParticipantsAudio,
   DyteNotifications,
-  DyteSetupScreen,
-  DyteNameTag,
-  DyteAvatar,
   DyteDialogManager,
   DyteSettingsToggle,
 } from '@dytesdk/react-ui-kit';
