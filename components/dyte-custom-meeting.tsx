@@ -10,6 +10,8 @@ import {
   DyteParticipantsAudio,
   DyteNotifications,
   DyteSetupScreen,
+  DyteNameTag,
+  DyteAvatar,
   DyteDialogManager,
   DyteSettingsToggle,
 } from '@dytesdk/react-ui-kit';
@@ -68,7 +70,20 @@ const DyteCustomMeeting = () => {
         </div>
       </div>
       <div style={{ flexGrow: 1 }}>
-        <DyteGrid gap={8} meeting={meeting}/>
+        <DyteGrid 
+          gap={8}
+          meeting={meeting}
+          states={meetingState}
+          config={{
+            root: {
+              'dyte-participant-tile': [
+                'dyte-avatar',
+                'dyte-name-tag',
+              ],
+              'dyte-name-tag': [['dyte-audio-visualizer', { slot: 'start' }]],
+            },
+          }}
+        />
       </div>
       <DyteNotifications meeting={meeting} />
       <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center' }}>
